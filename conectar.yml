@@ -1,0 +1,5 @@
+---
+- name: Testar conectividade 
+  hosts: all
+  roles:
+   - conectar
