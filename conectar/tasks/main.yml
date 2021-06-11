@@ -1,0 +1,15 @@
+---
+- name: Ping for create FACTS
+  ping:
+  register: resultado
+
+- name: Show ping returns
+  debug:
+    msg: "{{  resultado }}"
+    
+- name: Change password user1
+  user:
+    name: user1
+    update_password: always
+    password: "{{ pass_user1| string |password_hash('sha512') }}"
+  when: resultado.failed == False
