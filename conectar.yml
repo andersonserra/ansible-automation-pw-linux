@@ -1,5 +1,7 @@
 ---
 - name: Testar conectividade 
+  vars_files:
+  - vars/external_vars.yml
   hosts: all
   roles:
    - conectar
